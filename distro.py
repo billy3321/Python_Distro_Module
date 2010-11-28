@@ -95,9 +95,11 @@ class Distribution(object):
                 self.name = 'mandriva'
             elif os.path.exists('/etc/pclinuxos-release') and commands.getoutput('cat /etc/pclinuxos-release | grep "PCLinuxOS"'):
                 self.name = 'pclinuxos'
-        elif self.name == 'gentoo':
+        elif self.name in ('gentoo', 'Gentoo Base System':
             if os.path.exists('/etc/sabayon-release'):
                 self.name = 'sabayon'
+            else:
+                self.name = 'gentoo'
     #}}}
 
     #{{{def _reduce_version(self):
@@ -114,8 +116,6 @@ class Distribution(object):
             self.version = commands.getoutput('cat /etc/linpus-release | cut -d " " -f 4')
         elif self.name == 'magiclinux':
             self.version = commands.getoutput('cat /etc/ark-release')
-        elif self.name == 'debian':
-            self.version = self.version.split('.')[0]
     #}}}
 
     def _reduce_architecture(self):
