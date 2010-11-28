@@ -82,7 +82,7 @@ class Distribution(object):
                 print "Lazyscripts not support your Linux distribution."
                 self.name = None
                 raise DistrobutionNotFound()
-        elif self.name == 'susE':
+        elif self.name == 'suse':
             if commands.getoutput('cat /etc/SuSE-release | grep "openSUSE"'):
                 self.name = 'opensuse'
         elif self.name == 'redhat':
