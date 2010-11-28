@@ -95,7 +95,7 @@ class Distribution(object):
                 self.name = 'mandriva'
             elif os.path.exists('/etc/pclinuxos-release') and commands.getoutput('cat /etc/pclinuxos-release | grep "PCLinuxOS"'):
                 self.name = 'pclinuxos'
-        elif self.name in ('gentoo', 'Gentoo Base System':
+        elif self.name in ('gentoo', 'Gentoo Base System'):
             if os.path.exists('/etc/sabayon-release'):
                 self.name = 'sabayon'
             else:
